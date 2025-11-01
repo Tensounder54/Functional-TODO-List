@@ -12,15 +12,14 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THIS SOFTWARE OR T
 DEALINGS IN THE SOFTWARE.
 """
 
-from ast import Raise, parse
-
+# First Party Imports
 from copy import deepcopy
 
-from email import message
 from inspect import signature
 from inspect import getmembers
 
-import re
+from json import dumps
+
 from sys import exit as close_program
 from sys import modules
 
@@ -31,12 +30,8 @@ from typing import NoReturn
 from types import FunctionType
 from types import NoneType
 
-from json import dumps
-
-# from pathlib import Path
-
-# from json import dumps as json_dumps
-# from json import load as json_loads
+# Third Party Imports
+from funcs import raises
 
 
 def list_help(help_list: List[FunctionType], start: bool = False, help_item: int = 0) -> bool:

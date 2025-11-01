@@ -277,7 +277,7 @@ def render_todo_list(todo_list: List[Dict[str, (str | bool | NoneType)]]) -> Non
     :returns: None
     :rtype: NoneType
     """
-    return print(str(dumps(todo_list, indent=4)))
+    return bool(print(str(dumps(todo_list, indent=4))))
 
 
 def exit_the_program() -> NoReturn:

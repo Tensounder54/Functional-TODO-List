@@ -110,12 +110,11 @@ def add_item(
     :param todo_list: The TODO list to add an item to.
     :type todo_list: List[Dict[str, (str | bool | NoneType)]]
 
+    :raises: ValueError when item_to_edit is None and toggle_completed is True.
+
     :returns: The updated TODO list.
     :rtype: List[Dict[str, (str | bool | NoneType)]]
     """
-
-    def _raise_type_error(message: str) -> NoReturn:
-        raise TypeError(message)
 
     next_error: str = ("Invalid passed parameter set."
         + "\nMust pass an item_to_edit if passing toggle_completed as true."
@@ -124,7 +123,7 @@ def add_item(
     )
 
     completed_status: bool = (
-        _raise_type_error(message=next_error)
+        raises(ValueError(next_error))()
         if item_to_edit is None and toggle_completed
         else (False if item_to_edit is None else todo_list[item_to_edit].get("completed", False))
     )

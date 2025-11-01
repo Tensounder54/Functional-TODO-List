@@ -1,4 +1,10 @@
 """
+!/usr/bin/env -S uv run --script
+
+/// script
+requires-python = ">=3.14"
+///
+
 Functional Python program to operate a TODO list. (Yes I deliberately wrote it that way.)
 
 Licenced under the GNU Affero General Public License V3.0

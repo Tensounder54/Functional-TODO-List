@@ -338,8 +338,8 @@ def main(start: bool, todo_list: List[Dict[str, (str | bool | NoneType)]]) -> No
 
     return_value: (bool | List[Dict[str, (str | bool | NoneType)]]) = help_list[selected_option]( # pylint: disable=unsubscriptable-object
         *map( # pylint: disable=unsubscriptable-object
-            func=lambda attribute : getattr(main, attribute),
-            iterable=signature(obj=help_list[selected_option]).format() # pylint: disable=unsubscriptable-object
+            lambda attribute : getattr(main, attribute),
+            signature(obj=help_list[selected_option]).format() # pylint: disable=unsubscriptable-object
         )
     )
 
